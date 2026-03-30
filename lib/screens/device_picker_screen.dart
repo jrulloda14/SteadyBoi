@@ -72,7 +72,7 @@ class _DevicePickerScreenState extends State<DevicePickerScreen> {
           children: [
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(20, 28, 20, 20),
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 12),
               decoration: const BoxDecoration(
                 border: Border(bottom: BorderSide(color: AppTheme.border)),
               ),
