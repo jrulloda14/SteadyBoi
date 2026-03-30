@@ -205,26 +205,25 @@ class _DevicePickerScreenState extends State<DevicePickerScreen> {
   }
 
   Widget _buildError() {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.error_outline, size: 48, color: AppTheme.warn),
-            const SizedBox(height: 16),
-            Text(_error!,
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: AppTheme.textMuted, fontSize: 13, height: 1.6)),
-            const SizedBox(height: 20),
-            _OutlineButton(
-              label: 'Open App Settings',
-              icon: Icons.open_in_new,
-              onTap: openAppSettings,
-              accent: true,
-            ),
-          ],
-        ),
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(32),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const SizedBox(height: 20),
+          const Icon(Icons.error_outline, size: 48, color: AppTheme.warn),
+          const SizedBox(height: 16),
+          Text(_error!,
+              textAlign: TextAlign.center,
+              style: const TextStyle(color: AppTheme.textMuted, fontSize: 13, height: 1.6)),
+          const SizedBox(height: 20),
+          _OutlineButton(
+            label: 'Open App Settings',
+            icon: Icons.open_in_new,
+            onTap: openAppSettings,
+            accent: true,
+          ),
+        ],
       ),
     );
   }
