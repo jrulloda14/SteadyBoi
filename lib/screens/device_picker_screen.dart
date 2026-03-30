@@ -32,8 +32,9 @@ class _DevicePickerScreenState extends State<DevicePickerScreen> {
       Permission.location,
     ].request();
 
-    final denied = statuses.values.any((s) =>
-        s == PermissionStatus.denied
+    final denied = statuses.values.any(
+      (s) => s == PermissionStatus.denied || s == PermissionStatus.permanentlyDenied
+    );
 
     if (denied) {
       setState(() {
