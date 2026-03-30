@@ -27,14 +27,13 @@ class _DevicePickerScreenState extends State<DevicePickerScreen> {
     setState(() { _loading = true; _error = null; });
 
     final statuses = await [
-      Permission.bluetooth,
       Permission.bluetoothConnect,
       Permission.bluetoothScan,
       Permission.location,
     ].request();
 
     final denied = statuses.values.any((s) =>
-        s == PermissionStatus.denied || s == PermissionStatus.permanentlyDenied);
+        s == PermissionStatus.denied
 
     if (denied) {
       setState(() {
